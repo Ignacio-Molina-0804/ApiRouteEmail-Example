@@ -1,6 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { server as actions } from "../actions";
+
+const result = Astro.getActionResult(actions.send);
+if (result?.data) {
+  return Astro.redirect("/");
+}
+
 ---
 
 <Layout>
