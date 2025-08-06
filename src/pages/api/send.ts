@@ -7,14 +7,10 @@ const resend = new Resend(import.meta.env.RESEND_API_KEY);
 
 export const GET: APIRoute = async () => {
   //Crear Email
-
   const emailContent = SampleEmail({ username: "Nacho" });
   const html = await render(emailContent);
   const text = await render(emailContent, { plainText: true });
-  
-  
-    //Enviar Email
-
+  //Enviar Email
   const { data, error } = await resend.emails.send({
     from: "YOUR_NAME <YOUR_EMAIL@YOUR_DOMAIN>",
     to: ["delivered@resend.dev"],
