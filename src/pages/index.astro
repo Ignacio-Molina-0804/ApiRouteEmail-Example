@@ -1,12 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { server as actions } from "../actions";
+import { isInputError } from "astro:actions";
 
 const result = Astro.getActionResult(actions.send);
 if (result?.data) {
   return Astro.redirect("/");
 }
 
+const inputErrors = isInputError(result?.error) ? result.error.fields : {};
 ---
 
 <Layout>
