@@ -1,7 +1,6 @@
 # 🚀 ApiRouteEmailAstro
 
 ¡Bienvenido! Este proyecto demuestra cómo enviar emails desde un formulario usando **Astro**, **React Email** y **Resend**, aprovechando las nuevas `actions` de Astro y rutas API.  
-Inspirado en el video oficial de [Resend](https://www.youtube.com/watch?v=OzDg4QPmmac) 🎥.
 
 ---
 
@@ -86,4 +85,3 @@ Puedes probar el envío de emails directamente visitando:
 
 - Cambia el campo `from` en los archivos de envío por una dirección verificada en Resend.
 - El formulario valida el email y el nombre antes de enviar.
-- Si tienes dudas, revisa el video de Resend.
