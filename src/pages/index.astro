@@ -13,9 +13,33 @@ const inputErrors = isInputError(result?.error) ? result.error.fields : {};
 
 <Layout>
 	
-	<h1>Send me an email</h1>
-	<form action={actions.send} method="POST">
-		<button type="submit">Send</button>
-	</form>
+	<h1>Envia un email</h1>
+	 <form action={actions.send} method="post">
+      <label
+        >Usuario<input
+          type="text"
+          name="username"
+          placeholder="Usuario"
+          required
+          aria-describedby={inputErrors.username ? "username-error" : undefined}
+        />
+      </label>
+      {
+        inputErrors.username && (
+          <p id="username-error">{inputErrors.username[0]}</p>
+        )
+      }
+      <label
+        >Email<input
+          type="email"
+          name="email"
+          placeholder="Email"
+          required
+          aria-describedby={inputErrors.email ? "email-error" : undefined}
+        />
+      </label>
+      {inputErrors.email && <p id="email-error">{inputErrors.email[0]}</p>}
+      <button>Enviar</button>
+    </form>
 
 </Layout>

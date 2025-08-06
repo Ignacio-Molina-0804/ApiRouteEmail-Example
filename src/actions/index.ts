@@ -14,14 +14,14 @@ export const server = {
       email: z.string().email(),
     }),
     handler: async ({ username, email }) => {
-      // create the email
+      // Crear email
       const emailContent = SampleEmail({ username });
       const html = await render(emailContent);
       const text = await render(emailContent, {
         plainText: true,
       });
 
-      // send an email
+      // Enviar email
       const { data, error } = await resend.emails.send({
         from: "YOUR_NAME <YOUR_EMAIL@YOUR_DOMAIN>",
         to: [email],
